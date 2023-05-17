@@ -136,14 +136,13 @@ AUTHENTICATION_BACKENDS = (
 
 # Messages
 
-MESSAGES_TAGS = {
+MESSAGE_TAGS = {
     constants.DEBUG: 'alert-primary',
     constants.ERROR: 'alert-danger',
     constants.SUCCESS: 'alert-success',
     constants.INFO: 'alert-info',
     constants.WARNING: 'alert-warning',
 }
-
 
 # Email
 

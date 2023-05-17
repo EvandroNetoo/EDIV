@@ -7,5 +7,7 @@ urlpatterns = [
     # /auth/login/
     path('login/', login, name='login'),
     # /auth/active_account/uidb4/token/
-    path('active_account/<str:uidb4>/<str:token>/', active_account, name='active_account')
+    path('active_account/<str:uidb4>/<str:token>/', active_account, name='active_account'),
+    # /auth/logout/
+    path('logout/', logout, name='logout'),
 ]
