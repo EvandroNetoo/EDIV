@@ -1,0 +1,27 @@
+{% extends 'base_templates/general_base.html' %}
+
+{% block 'body' %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert {{ message.tags }} alert-dismissible fade show text-center" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <form action="{% url 'request_budget' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="fupload" class="control-label">Vídeo:</label>
+                <input type="file" name="file" id="fupload" class="form-control" />
+                <br>
+                <input type="submit" value="Enviar" class="btn btn-success">
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+{% endblock %}
