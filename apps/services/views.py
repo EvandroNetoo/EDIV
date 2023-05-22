@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.messages import constants
-from django.http import HttpRequest, HttpResponse, HttpResponseBadRequest
+from django.http import HttpRequest, HttpResponse
 from django.utils.safestring import mark_safe
 from django.urls import reverse
 from django.views import View
@@ -29,7 +29,8 @@ class BudgetRequestView(View):
         if not is_video(file):
             messages.add_message(request, constants.ERROR, 'O arquivo enviado deve ser um vídeo.')
             print('passei aqui')
-            return redirect('request_budget')
+            html_field = TinyMCE().render(name='descricao', value='', attrs={'id': 'id_descricao'})
+            return HttpResponse('teste')
         
         file_upload = ChunkUploadedFile(file)
         file_path = file_upload.save_disk()
@@ -50,4 +51,4 @@ class BudgetRequestView(View):
             f'Solitação de orçamento realizada com sucesso. <a href="{reverse("request_budget")}">Clique aqui</a> para ver o status.'
             ))
             
-        return redirect('request_budget')
+        return redirect(reverse('request_budget'))

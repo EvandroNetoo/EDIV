@@ -22,6 +22,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 DOMAIN = config('DOMAIN', cast=str)
 
+
 # Application definition
 
 INSTALLED_APPS = [

@@ -8,4 +8,3 @@ def is_video(file):
     mime = magic.Magic(mime=True)
     file_tipe = mime.from_buffer(file.read(1024))
     return file_tipe.startswith('video/')
-    

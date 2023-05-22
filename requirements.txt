@@ -1,0 +1,8 @@
+asgiref==3.6.0
+cffi==1.15.1
+Django==4.2.1
+django-tinymce==3.6.1
+pycparser==2.21
+python-decouple==3.8
+python-magic-bin==0.4.14
+sqlparse==0.4.4

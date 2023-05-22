@@ -38,6 +38,7 @@ def login(request: HttpRequest) -> HttpResponse:
                 return redirect('/') # TODO: REDIRECIONAR PARA HOME
         return render(request, 'login.html', {'auth_form': auth_form})
 
+
 def active_account(request: HttpRequest, uidb4: str, token: str) -> HttpResponse:
     User = get_user_model()
     uid = urlsafe_base64_decode(uidb4)
